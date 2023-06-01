@@ -45,11 +45,15 @@ categories: media
 
 **售后群操作**
 
-1. 在购买了BerryPetPlus插件后，在群内输入 `list` 查看自己是否已经拥有该插件，没有请找草莓为您添加。
-2. 在售后群输入 `download` 指令，获得最新版的BerryLib下载地址，点击下载。
-3. 在售后群输入 `unbind` 指令，解绑一次，这样开服时便会自动绑定ip，同理以后服务器ip变动也要输入。
-4. 将BerryLib放入服务端的plugins文件夹，启动服务器，待生成BerryLib文件夹后，关闭服务器。
-5. 在BerryLib文件夹中的config.yml文件中，填写您的QQ和插件名字，例如下面这样：
+1、 在购买了BerryPetPlus插件后，在群内输入 `list` 查看自己是否已经拥有该插件，没有请找草莓为您添加。
+
+2、 在售后群输入 `download` 指令，获得最新版的BerryLib下载地址，点击下载。
+
+3、 在售后群输入 `unbind` 指令，解绑一次，这样开服时便会自动绑定ip，同理以后服务器ip变动也要输入。
+
+4、 将BerryLib放入服务端的plugins文件夹，启动服务器，待生成BerryLib文件夹后，关闭服务器。
+
+5、 在BerryLib文件夹中的config.yml文件中，填写您的QQ和插件名字，例如下面这样：
 
 ```yaml
 #您购买的qq号
@@ -60,7 +64,7 @@ plugins:
 
 ```
 
-6. **[注意]在BerryLib文件夹下的BerryPetPlus文件夹中，config.yml文件中修改您的数据库设置，并选择是萌芽还是龙核！(因为这两项更改后需要重启一下，所以建议先更改再开服)**
+6、 **[注意]在BerryLib文件夹下的BerryPetPlus文件夹中，config.yml文件中修改您的数据库设置，并选择是萌芽还是龙核！(因为这两项更改后需要重启一下，所以建议先更改再开服)**
   
 ```yaml
 #存储玩家宠物物品的数据库
@@ -83,9 +87,13 @@ database:
 state: 1
 ```
 
-7. 开启服务器，云端将会自动下载插件到您的服务器并加载，现在，开始使用！
+7、 开启服务器，云端将会自动下载插件到您的服务器并加载，现在，开始使用！
 
 ---
+
+# Wiki的配置文件可能不是最新，请主要参考最新配置文件！
+
+# 如果需要更新配置文件，备份已有文件然后删除，重启重新生成即可！
 
 # 配置宠物槽位
 在 `BerryLib/BerryPetPlus/slots.yml` 文件中，配置宠物槽位的设置，如下配置文件，参考注释
@@ -119,20 +127,29 @@ cooldown: 10
 
 ```
 
-## [注意]
+## 注意
+
 **如果您是龙核用户：**
+
 请 **不要在 龙核的SlotConfig.yml中填写宠物槽位的注册信息，因为本插件自己保存槽位物品，请一定不要在SlotConfig.yml中再去注册一边槽位**！
+
 在SlotConfig.yml中注册的槽位，龙核会管理其物品存储，这与本插件是冲突的！并且为了防止属性重复增加，请不要给宠物槽位开启读取物品属性的操作！本插件自己加属性，宠物物品上Lore显示的属性仅仅是给玩家看的！
+
 **如果您是萌芽用户：**
+
 请 **不要将 槽位名字填写为以 `**germplugin_`** 开头的identity！
+
 同理，对于 `germplugin_` 开头的槽位id，萌芽插件会管理其物品存储，这与本插件冲突！并且为了防止属性重复增加，请不要给宠物槽位开启读取物品属性的操作！本插件自己加属性，宠物物品上Lore显示的属性仅仅是给玩家看的！
 
 ---
 
 # 配置宠物
 在 `BerryLib/BerryPetPlus/pets` 文件夹下，有一个 `example.yml` 文件，为**示例宠物配置**。
+
 文件名**去掉后缀.yml**之后，便是宠物的内部id，请不要重复！(例如 `example.yml` 对应的就是id为 `example` 的宠物)
+
 每个节点均有详细的配置注释，参考文件注释即可！
+
 提示：宠物属性部分的移动速度别写太快了，要不然很鬼畜
 
 ```yaml
@@ -308,9 +325,13 @@ pet-skills:
 1. 通过指令给予，详见指令章节。
 2. 通过经验丹给予，详见[经验丹章节](#rJkyy)。
 3. 通过配置MythicMobs的掉落，从而实现玩家击杀MM怪物时，给宠物经验，详见[MythicMobs适配章节](#lh3fx)。
+
+
 ## 经验丹
 在配置文件 `**exp.yml**` 中，配置全部的经验丹设置。
+
 经验丹使用方法为：**将经验丹放在副手 宠物物品拿在主手 然后右键即可使用经验丹**
+
 更多介绍详见 `**exp.yml**` 的注释
 
 ```yaml
@@ -373,7 +394,7 @@ exp:
 
 ## MythicMobs适配
 
-1. 给怪物的Drops节点中增加如下配置，能让怪物在被杀死时为全部槽位的宠物增加经验
+1、 给怪物的Drops节点中增加如下配置，能让怪物在被杀死时为全部槽位的宠物增加经验
 
 ```yaml
 Drops:
@@ -383,7 +404,22 @@ Drops:
 
 ```
 
-1. 宠物技能直接识别MythicMobs的技能ID
+2、 宠物技能直接识别MythicMobs的技能ID
+
+3、给MythicMobs增加了两个技能选择器如下
+
+```yaml
+berrypetowner 当技能是宠物实体释放时，目标为宠物主人
+berrypetself 当技能是主人释放时，目标为自己的全部宠物
+
+```
+使用方法：
+
+1）加入MythicExtension插件（群文件有），并开服生成文件夹
+
+2）将BerryPetMMEx.jar下载（群文件）放入plugins\MythicMobsExtension\externals中
+
+3）重启服务器即可加载
 
 ---
 
@@ -398,15 +434,19 @@ Drops:
 **[]内的东西代表可选内容**
 ## reload
 /pet2 reload
+
 重载全部配置(除了config.yml中提到的两个必须重启的配置)
 ## getItem
 /pet2 getItem 宠物内部id [玩家id(默认为自己)] [数量(默认为1)]
+
 给予指定玩家指定数量的，指定id的宠物的初始物品
 ## addexp
 /pet2 addexp 宠物槽位名字 数目 [玩家id(默认为自己)]
+
 给指定玩家指定宠物槽位的宠物增加一定数量的经验值
 ## addlevel
 /pet2 addlevel 宠物槽位名字 数目 [玩家id(默认为自己)]
+
 给指定玩家指定宠物槽位的宠物增加一定数量的等级
 
 ---
@@ -425,259 +465,3 @@ Drops:
 ```
 
 ---
-
-# 更新记录
-2023-2-1重大更新！！！
-1、宠物的pet-attribute节点增加许多节点，具体用途见注释，这些节点均可自由加入，复制下面的即可。
-
-```yaml
-#宠物属性部分
-#宠物的自身属性
-pet-attribute:
-
-  #宠物是否为无敌的？
-  #不写该节点则默认无敌
-  #true 代表无敌 宠物无法受到任何伤害
-  #false 则代表不无敌 宠物会被攻击且会死亡 死亡后经过一段时间则会自动重生
-  is-invulnerable: false
-
-  #宠物的生命
-  #支持公式和papi 加减乘除括号
-  #level代表宠物当前等级
-  health: 'level + 10'
-
-  #宠物免疫的伤害类型
-  #CONTACT, ENTITY_ATTACK, ENTITY_SWEEP_ATTACK, PROJECTILE, SUFFOCATION, FALL, FIRE, FIRE_TICK, MELTING, LAVA, DROWNING, BLOCK_EXPLOSION, ENTITY_EXPLOSION, VOID, LIGHTNING, SUICIDE, STARVATION, POISON, MAGIC, WITHER, FALLING_BLOCK, THORNS, DRAGON_BREATH, CUSTOM, FLY_INTO_WALL, HOT_FLOOR, CRAMMING, DRYOUT, FREEZE;
-  #参考链接 https://helpch.at/docs/1.12.2/org/bukkit/event/entity/EntityDamageEvent.DamageCause.html
-  #例如FALL就是跌落伤害 意思就是宠物不会受到跌落伤害
-  #其他意思请自行翻译
-  no-damage:
-    - 'FALL'
-
-  #可以给宠物增加来自于属性插件的属性
-  #例如AttributePlus3.x
-  #同理 也支持papi 支持level替换为宠物当前等级
-  #属性名;值(支持公式--四则运算)(level 宠物当前等级);跟在最后面的符号，例如ap3要读取百分比的话就是在最后加一个 (%)
-  #支持PAPI 前提是这个PAPI必须返回一个数字！！！
-  #对于PxRpg,属性格式如下
-  #属性名;最小值(支持公式--四则运算)(level 当前等级);最大值(支持公式--四则运算)(level 当前等级);是否为百分比加成?true代表是,false代表不是
-  attributes:
-    - '物理伤害;level * 5'
-    - '物理伤害;5;(%)'
-
-
-  #宠物能否攻击？
-  #不写该节点则默认为true
-  can-attack: true
-
-  #攻击
-  #支持公式和papi 加减乘除括号
-  #level代表宠物当前等级
-  attack: 'level * 5'
-
-  #移动速度
-  #支持公式和papi 加减乘除括号
-  #level代表宠物当前等级
-  #不建议该值随等级增大而增大 一般来说0.8左右即为正常的移动速度 太快会鬼畜
-  speed: 'level + 1'
-
-  #宠物攻速
-  #以tick为单位 20tick=1s
-  #多少tick一次
-  interval: '20'
-
-  #宠物拾取物品设置
-  #当开启之后 宠物每隔一段时间便会拾取身边的掉落物直接加入到主人的背包中，如果背包满了则不行
-  pickup:
-    #是否开启？
-    enable: false
-    #拾取半径
-    #支持公式和papi 加减乘除括号
-    #level代表宠物当前等级
-    range: 'level + 1'
-    #拾取间隔(单位 秒)
-    #支持公式和papi 加减乘除括号
-    #level代表宠物当前等级
-    period: 'level + 1'
-```
-2、宠物支持了属性插件的属性，能够为宠物增加属性插件的属性！在宠物配置文件的pet-attribute节点下的attributes节点配置即可（见上，无该节点请自行添加该节点）
-3、宠物加入生命系统！见上新增节点中的health节点和is-invulnerable节点注释。
-4、宠物技能新增技能触发器
-```yaml
-PETATTACK 当宠物自己攻击时 触发的技能
-PETHURT 当宠物自己受到伤害时 触发的技能
-PETDEATH 当宠物死亡时 触发的技能
-PETSPAWN 当宠物生成时 触发的技能(第一次召唤和重生均会触发)
-```
-5、宠物技能新增节点 rate 概率节点，用来设置宠物技能触发的概率，自行添加该节点即可。
-```yaml
-pet-skills:
-  #技能内部id 不重复即可
-  s1:
-    #新增 技能触发的概率
-    #不写默认为100%
-    #支持计算 level代表宠物等级 也可以写papi 前提是papi返回一个数字！
-    #0-1 0.1代表10%
-    rate: '0.5 + (level * 0.1)'
-```
-6、新增PAPI
-  %berrypetplus_health:宠物槽位id% 对应槽位上宠物的当前血量
-  %berrypetplus_maxhealth:宠物槽位id% 对应槽位上宠物的最大血量
-7、config新增设置，其中，打开addNoSpawn节点则可以让按键宠物即使在未按键生成实体时，只要放在了槽位上就可以加属性。
-```yaml
-#当获取宠物变量失败时展示的文字
-info: '[宠物系统]错误的变量'
-
-#对于按键召唤的宠物 当没生成宠物实体是，是否增加属性？
-addNoSpawn: false
-
-#宠物的一些设置
-
-#1、宠物是否会攻击玩家？例如当玩家PVP时，宠物是否会攻击对方玩家？
-can-attack-player: false
-
-#2、宠物是否会攻击其他宠物实体？当自己的主人攻击到了其他人的宠物时，自己的宠物是否会去一起攻击？
-can-attack-other-pet: false
-```
-8、新增宠物口粮系统！为宠物喂食口粮可以回复其血量！请更新至最新BerryLib，将会自动生成（如果没有可以复制下面的内容，自行在BerryPetPlus文件夹下创建petfood.yml文件）
-```yaml
-#本文件配置宠物的食物
-#副手拿宠物食物 主手拿宠物物品
-#右键即可进行喂食
-#喂食会回复宠物血量
-#当宠物血量为0时将无法召唤助战和加成属性
-#识别食物只需名字一致即可 包括颜色
-
-food:
-
-  #id 不重复即可
-  id1:
-    #识别物品名字
-    name: '初级宠物口粮'
-    
-    #回复的血量
-    #支持计算公式 支持PAPI
-    #level代表宠物当前等级 nowexp代表宠物当前经验 nextexp代表宠物升到下一级所需要的经验 maxhealth代表宠物的最大血量 health代表宠物当前血量
-    regen: '10'
-    
-    #使用口粮的等级限制
-    #可以使用该口粮的最小等级
-    min-level: 0
-    #可以使用该口粮的最高等级
-    max-level: 20
-    
-    #可以使用该口粮的宠物的id
-    #不写该节点则默认全部宠物都可以使用
-    can-use-pets:
-    - 'example'
-  
-  id2:
-    name: '超级口粮[回复满]'
-    regen: 'maxhealth'
-    #不写等级限制则全部等级都可用
-    #不写宠物限制则全部宠物都能用
-```
-9、语言系统更新节点
-```yaml
-#使用宠物口粮时 当前宠物无法使用该种类口粮
-food-notpet: '当前宠物无法使用该种类口粮!'
-
-#使用口粮时 宠物当前等级未达到口粮使用所需要的最小等级
-#{0} 宠物当前等级
-#{1} 该口使用所需要的最小等级
-food-minlevel: '当前宠物等级为 {0} 未达到该经验丹所需要的最小使用等级 {1}'
-
-#使用口粮时 宠物当前等级超过了口粮可以使用的最大等级
-#{0} 宠物当前等级
-#{1} 该口粮支持的最大等级
-food-maxlevel: '当前宠物等级为 {0} 超过该口粮需要的最大使用等级 {1}'
-
-#宠物收到伤害的提示
-#{0} 宠物当前血量
-#{1} 宠物最大血量
-pet-damage: '宠物受伤!血量 {0}/{1}'
-
-#宠物死亡提示
-pet-death: '你的宠物死亡了!'
-
-#宠物死亡无法召唤
-cant-spawn: '宠物无法召唤,因为已经死亡!请先用道具回复血量!'
-
-#宠物帮助拾取时提示
-#{0} 物品名字
-#{1} 物品数量
-pickup: '宠物帮你拾取了 {0} * {1}个,已放入您的背包或者脚下!'
-```
-10、宠物的名字/物品Lore节点中，可以用{4}代指宠物当前血量、{5}代指宠物最大血量
-请一定要更新至最新版BerryLib！！！！！！！！！
-11、更新宠物拾取系统，宠物能够帮忙拾取，见上pet-attribute增加的节点的注释
-
----
-
-2023-2-10更新记录
-1、兼容DungeonPlus，修复进副本宠物不召唤的问题
-2、修复升级脚本不执行的问题
-3、修复宠物口粮不支持颜色名字的问题
-4、在宠物配置文件新增配置
-```yaml
-#宠物基本设置
-#基本设置中的全部节点都不可删除!必须填写!
-pet-basic-data:
-
-  #宠物物品设置
-  bind-item:
-    #物品材质 全英文大写
-    #注意！！！！不要让该材质的物品能叠加放！否则可能会造成bug 最好是唱片啥的，最好不要让他叠加
-    type: 'PAPER'
-    #如果是头颅 在这里填写skinValue
-    #例如eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDE3MTU3ZjNkYzNlMWE1OTJiNDNiNGVmN2UxNjg3OTRlYzYyNzEzOGExMDY1MzcyM2FkMzJjOGQxNjAyNiJ9fX0
-    #可以在网站 https://minecraft-heads.com/ 查看
-    #不需要的话请删除该节点！！！
-    skinValue: ''
-    #物品展示名
-    name: '&b测试宠物'
-    #物品lore 支持替换符 {0}当前等级   {1}最大等级 {2}当前经验 {3}下一级所需经验 {4}宠物当前血量 {5}宠物最大血量
-    #lore只是用来给玩家看的 不起加属性的作用 请关闭宠物/宠物装备槽位的加属性功能
-    lore:
-    - '&b-----宠物物品-----'
-    - '&a当前等级: {0}/{1}'
-    - '&a当前经验: {2}/{3}'
-    - '&a宠物血量: {4}/{5}'
-    - '&a增加攻击: 10 * {0}'
-    - '&b其他写法: #level * 10# 这中间会被替换为公式并计算,level代表宠物等级'
-    
-    #新增功能
-    #以下行数的Lore不会被刷新！
-    #行数从0开始计算
-    #不写则默认每一行都会刷新
-    #用来防止绑定的Lore被刷新掉等其他插件修改的宠物物品的Lore
-    not-update:
-    - 1
-    - 2
-```
-
-防止刷新物品导致绑定Lore消失等问题
- 5、 slot.yml加入节点  
-```yaml
-#新增配置 2023-2-10
-#当宠物槽位包含指定Lore时 无法放入
-limitLore:
-  #槽位名字
-  宠物_槽位:
-  #包含以下Lore时无法放入槽位
-  - '未绑定不能放入槽位'
-```
-
----
-
-2023-2-11更新
-1、宠物CatServer兼容完毕，请使用官网最新版1.12.2的cat核心!
-2、给MythicMobs增加了两个技能选择器如下
-```yaml
-berrypetowner 当技能是宠物实体释放时，目标为宠物主人
-berrypetself 当技能是主人释放时，目标为自己的全部宠物
-```
-使用方法：
-1）加入MythicExtension插件（群文件有），并开服生成文件夹
-2）将BerryPetMMEx.jar下载（群文件）放入plugins\MythicMobsExtension\externals中
-3）重启服务器即可加载
