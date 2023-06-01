@@ -1,3 +1,10 @@
+---
+title:  "[宠物PLUS]BerryPetPlus"
+mathjax: true
+layout: post
+categories: media
+---
+
 **一款简单方便、功能强大的宠物插件**
 
 ---
