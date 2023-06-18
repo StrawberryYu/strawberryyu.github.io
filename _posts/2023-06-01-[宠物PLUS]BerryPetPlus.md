@@ -45,27 +45,31 @@ categories: media
 
 **售后群操作**
 
-1、 在购买了BerryPetPlus插件后，在群内输入 `list` 查看自己是否已经拥有该插件，没有请找草莓为您添加。
+0、先联系草莓（群主）给你账号添加插件
 
-2、 在售后群输入 `download` 指令，获得最新版的BerryLib下载地址，点击下载。
+1、首先在群文件的 加载器[最新版] 文件夹下下载AckManLoader和BerryLib
 
-3、 在售后群输入 `unbind` 指令，解绑一次，这样开服时便会自动绑定ip，同理以后服务器ip变动也要输入。
+2、放入plugins并启动服务器，在AckManLoader的config中填写您的token和想要加载的插件名字（在网站查看）版本填auto,例如如下插件则填写
 
-4、 将BerryLib放入服务端的plugins文件夹，启动服务器，待生成BerryLib文件夹后，关闭服务器。
-
-5、 在BerryLib文件夹中的config.yml文件中，填写您的QQ和插件名字，例如下面这样：
+![example](C:\Users\Strawberry\Desktop\BerryDoc\wiki\img\example.png)
 
 ```yaml
-#您购买的qq号
-qq: '您购买的qq号'
-
-plugins:
-  - 'BerryPetPlus'
-
+authorisation:
+  # 用户令牌
+  token: "xxxxxxxxxxxxxxxxxxxxxxx"
+  plugins:
+    # 插件名字："版本"
+    BerryShopPlus: "auto"
 ```
 
+3、重启服务器即可加载插件
+
+4、解绑在网站完成
+
+5、解绑网站地址为 http://www.ackman.cn/
+
 6、 **[注意]在BerryLib文件夹下的BerryPetPlus文件夹中，config.yml文件中修改您的数据库设置，并选择是萌芽还是龙核！(因为这两项更改后需要重启一下，所以建议先更改再开服)**
-  
+
 ```yaml
 #存储玩家宠物物品的数据库
 #更改请重启!
